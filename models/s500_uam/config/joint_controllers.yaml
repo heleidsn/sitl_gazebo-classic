@@ -1,0 +1,5 @@
+s500_uam:
+  joint_1_position_controller:
+    type: position_controllers/JointPositionController
+    joint: joint_1
+    pid: {p: 100.0, i: 0.01, d: 10.0}

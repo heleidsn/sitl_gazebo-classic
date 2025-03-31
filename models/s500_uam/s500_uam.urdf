@@ -1,10 +1,9 @@
-<!-- DO NOT EDIT: Generated from s500.sdf.jinja -->
-<sdf version='1.6'>
-  <model name='s500'>
+<sdf version='1.7'>
+  <model name='s500_uam'>
     <link name='base_link'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <mass>1.772</mass>
         <inertia>
           <ixx>0.0165</ixx>
@@ -12,11 +11,11 @@
           <ixz>0</ixz>
           <iyy>0.0186</iyy>
           <iyz>0</iyz>
-          <izz>0.0250</izz>
+          <izz>0.025</izz>
         </inertia>
       </inertial>
       <collision name='base_link_inertia_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
             <size>0.47 0.47 0.35</size>
@@ -35,11 +34,11 @@
         </surface>
       </collision>
       <visual name='base_link_inertia_visual'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://s500/meshes/s500_base_link.STL</uri>
+            <uri>model://s500_uam/meshes/base_link.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -53,9 +52,9 @@
       <velocity_decay/>
     </link>
     <link name='/imu_link'>
-      <pose>0 0 0.02 0 0 0</pose>
+      <pose>0 0 0.02 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <mass>0.015</mass>
         <inertia>
           <ixx>1e-05</ixx>
@@ -71,7 +70,7 @@
       <child>/imu_link</child>
       <parent>base_link</parent>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz expressed_in='__model__'>1 0 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>0</upper>
@@ -82,14 +81,13 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
     <link name='rotor_0'>
-      <pose>0.171 -0.171 0.048 0 0 0</pose>
+      <pose>0.171 -0.171 0.048 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.010</mass>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
         <inertia>
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
@@ -100,7 +98,7 @@
         </inertia>
       </inertial>
       <collision name='rotor_0_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -117,11 +115,11 @@
         </surface>
       </collision>
       <visual name='rotor_0_visual'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://s500/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://s500_uam/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -138,7 +136,7 @@
       <child>rotor_0</child>
       <parent>base_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -147,14 +145,13 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
     <link name='rotor_1'>
-      <pose>-0.171 0.171 0.048 0 0 0</pose>
+      <pose>-0.171 0.171 0.048 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.010</mass>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
         <inertia>
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
@@ -165,7 +162,7 @@
         </inertia>
       </inertial>
       <collision name='rotor_1_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -182,11 +179,11 @@
         </surface>
       </collision>
       <visual name='rotor_1_visual'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://s500/meshes/iris_prop_ccw.dae</uri>
+            <uri>model://s500_uam/meshes/iris_prop_ccw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -203,7 +200,7 @@
       <child>rotor_1</child>
       <parent>base_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -212,14 +209,13 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
     <link name='rotor_2'>
-      <pose>0.171 0.171 0.048 0 0 0</pose>
+      <pose>0.171 0.171 0.048 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.010</mass>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
         <inertia>
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
@@ -230,7 +226,7 @@
         </inertia>
       </inertial>
       <collision name='rotor_2_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -247,11 +243,11 @@
         </surface>
       </collision>
       <visual name='rotor_2_visual'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://s500/meshes/iris_prop_cw.dae</uri>
+            <uri>model://s500_uam/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -268,7 +264,7 @@
       <child>rotor_2</child>
       <parent>base_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -277,14 +273,13 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
     <link name='rotor_3'>
-      <pose>-0.171 -0.171 0.048 0 0 0</pose>
+      <pose>-0.171 -0.171 0.048 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
-        <mass>0.010</mass>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
         <inertia>
           <ixx>9.75e-07</ixx>
           <ixy>0</ixy>
@@ -295,7 +290,7 @@
         </inertia>
       </inertial>
       <collision name='rotor_3_collision'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.005</length>
@@ -312,11 +307,11 @@
         </surface>
       </collision>
       <visual name='rotor_3_visual'>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://s500/meshes/iris_prop_cw.dae</uri>
+            <uri>model://s500_uam/meshes/iris_prop_cw.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -333,7 +328,7 @@
       <child>rotor_3</child>
       <parent>base_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz expressed_in='__model__'>0 0 1</xyz>
         <limit>
           <lower>-1e+16</lower>
           <upper>1e+16</upper>
@@ -342,9 +337,212 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+    <joint name='joint_1' type='revolute'>
+      <pose relative_to='base_link'>0.0007 0 -0.07275 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>link_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_1'>
+      <pose relative_to='joint_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0.000196 -0.076809 0 -0 0</pose>
+        <mass>0.056776</mass>
+        <inertia>
+          <ixx>1.5689e-05</ixx>
+          <ixy>-1.0155e-16</ixy>
+          <ixz>-5.2428e-15</ixz>
+          <iyy>1.3617e-05</iyy>
+          <iyz>-1.6017e-09</iyz>
+          <izz>8.7857e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_2' type='revolute'>
+      <pose relative_to='link_1'>0 0 -0.09925 0 0.2936 0</pose>
+      <parent>link_1</parent>
+      <child>link_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_2'>
+      <pose relative_to='joint_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000575 0.000247 -0.072261 0 -0 0</pose>
+        <mass>0.065663</mass>
+        <inertia>
+          <ixx>1.3006e-05</ixx>
+          <ixy>2.5553e-07</ixy>
+          <ixz>4.4082e-09</ixz>
+          <iyy>1.4985e-05</iyy>
+          <iyz>-6.0777e-07</iyz>
+          <izz>1.6054e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_3' type='revolute'>
+      <pose relative_to='link_2'>-0.011 0 -0.08225 0 0.23432 -3.14159</pose>
+      <parent>link_2</parent>
+      <child>link_3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_3'>
+      <pose relative_to='joint_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.025274 0.000991 -0.041284 0 -0 0</pose>
+        <mass>0.012158</mass>
+        <inertia>
+          <ixx>1.0667e-05</ixx>
+          <ixy>-2.5213e-09</ixy>
+          <ixz>3.6553e-06</ixz>
+          <iyy>1.2675e-05</iyy>
+          <iyz>4.2721e-09</iyz>
+          <izz>2.4775e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_4' type='revolute'>
+      <pose relative_to='link_2'>0.011 0 -0.08225 0 0.26237 0</pose>
+      <parent>link_2</parent>
+      <child>link_4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>10</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='link_4'>
+      <pose relative_to='joint_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.024422 -0.000991 -0.039818 0 -0 0</pose>
+        <mass>0.012587</mass>
+        <inertia>
+          <ixx>1.1294e-05</ixx>
+          <ixy>2.4212e-09</ixy>
+          <ixz>4.0228e-06</ixz>
+          <iyy>1.352e-05</iyy>
+          <iyz>-4.1022e-09</iyz>
+          <izz>2.6966e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='link_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://s500_uam/meshes/link_4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
     <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
       <robotNamespace/>
       <linkName>base_link</linkName>
@@ -418,11 +616,54 @@
       <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
     </plugin>
-    <include>
-      <uri>model://gps</uri>
-      <pose>0.05 0 0.04 0 0 0</pose>
-      <name>gps0</name>
-    </include>
+    <frame name='gps0::__model__' attached_to='gps0::link'>
+      <pose relative_to='__model__'>0.05 0 0.04 0 -0 0</pose>
+    </frame>
+    <link name='gps0::link'>
+      <pose relative_to='gps0::__model__'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.015</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.002</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='gps' type='gps'>
+        <pose>0 0 0 0 -0 0</pose>
+        <update_rate>5</update_rate>
+        <always_on>1</always_on>
+        <visualize>0</visualize>
+        <plugin name='gps_plugin' filename='libgazebo_gps_plugin.so'>
+          <robotNamespace/>
+          <gpsNoise>1</gpsNoise>
+          <gpsXYRandomWalk>2.0</gpsXYRandomWalk>
+          <gpsZRandomWalk>4.0</gpsZRandomWalk>
+          <gpsXYNoiseDensity>2.0e-4</gpsXYNoiseDensity>
+          <gpsZNoiseDensity>4.0e-4</gpsZNoiseDensity>
+          <gpsVXYNoiseDensity>0.2</gpsVXYNoiseDensity>
+          <gpsVZNoiseDensity>0.4</gpsVZNoiseDensity>
+        </plugin>
+      </sensor>
+    </link>
     <joint name='gps0_joint' type='fixed'>
       <child>gps0::link</child>
       <parent>base_link</parent>
@@ -450,16 +691,16 @@
       <magSubTopic>/mag</magSubTopic>
       <baroSubTopic>/baro</baroSubTopic>
       <mavlink_addr>INADDR_ANY</mavlink_addr>
-      <mavlink_tcp_port>{{ mavlink_tcp_port }}</mavlink_tcp_port>
-      <mavlink_udp_port>{{ mavlink_udp_port }}</mavlink_udp_port>
-      <serialEnabled>{{ serial_enabled }}</serialEnabled>
-      <serialDevice>{{ serial_device }}</serialDevice>
-      <baudRate>{{ serial_baudrate }}</baudRate>
+      <mavlink_tcp_port>4560</mavlink_tcp_port>
+      <mavlink_udp_port>14560</mavlink_udp_port>
+      <serialEnabled>0</serialEnabled>
+      <serialDevice>/dev/ttyACM0</serialDevice>
+      <baudRate>921600</baudRate>
       <qgc_addr>INADDR_ANY</qgc_addr>
       <qgc_udp_port>14550</qgc_udp_port>
       <sdk_addr>INADDR_ANY</sdk_addr>
       <sdk_udp_port>14540</sdk_udp_port>
-      <hil_mode>{{ hil_mode }}</hil_mode>
+      <hil_mode>0</hil_mode>
       <hil_state_level>0</hil_state_level>
       <send_vision_estimation>0</send_vision_estimation>
       <send_odometry>1</send_odometry>
@@ -577,5 +818,20 @@
       <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/s500_uam</robotNamespace>
+      <controlPeriod>0.004</controlPeriod>
+    </plugin>
+
+    <transmission name="joint_1_trans">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="joint_1">
+	    <hardwareInterface>PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="joint_1_motor">
+	    <hardwareInterface>EffortJointInterface</hardwareInterface>
+	    <mechanicalReduction>1.0</mechanicalReduction>
+	</actuator>
+    </transmission>
   </model>
 </sdf>
